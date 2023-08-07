@@ -2,13 +2,17 @@
 @import '../../styles/mixins.scss';
 
 #header {
+  @include section-padding;
+  padding-top: 24px !important;
+  padding-bottom: 0px !important;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 24px 16px;
-  width: 100%;
   position: absolute;
   top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
 
   .logo-container {
     position: relative;
@@ -24,12 +28,12 @@
   .contact-btn {
     border: 1px solid $bg-color-02;
     color: $txt-color-01;
-    font-size: 14px;
+    font-size: 1rem;
     text-transform: uppercase;
     border-radius: 3rem;
     height: 2.5rem;
     width: 6.5rem;
-    transition: all .3s ease;
+    transition: $hover-transition;
   }
 
   .menu-btn {
@@ -68,7 +72,7 @@
   }
 
   @media(min-width: $tablet) {
-    padding: 2rem 3.5rem;
+    padding-top: 2rem !important;
 
     .logo-container {
       width: 3.5em;
@@ -88,9 +92,15 @@
     }
   }
 
-  @media(min-width: $desktop) {
-    padding: 2rem 7rem;
+  @media(min-width: $laptop) {
+    .contact-btn:hover {
+      font-size: 14px;
+      background: $bg-color-02;
+      color: #000;
+    }
+  }
 
+  @media(min-width: $desktop) {
     .logo-container {
       width: 4.5em;
       height: 4.5rem;
