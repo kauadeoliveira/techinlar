@@ -5,7 +5,6 @@ import '../styles/main.scss';
 
 // Components
 import {
-  Header,
   Hero,
   About,
   Benefits,
@@ -13,8 +12,9 @@ import {
   Works,
   Contact,
   Questions,
-  Footer,
-} from '@/components';
+} from '@/Sections';
+
+import { Footer, Header } from '@/components';
 
 export default function Home() {
   return (

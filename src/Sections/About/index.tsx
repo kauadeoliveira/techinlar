@@ -1,5 +1,6 @@
 import React, { forwardRef } from 'react';
 import './style.scss';
+import { SectionTitle } from '@/components';
 
 const About = forwardRef((ref, props) => {
   console.log(ref, props);
@@ -7,7 +8,6 @@ const About = forwardRef((ref, props) => {
   return (
     <section className="about">
       <div className="about__text">
-        <div>Section details</div>
         <h3>
           Conectamos conforto
           <br />
