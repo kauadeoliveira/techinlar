@@ -5,9 +5,9 @@ import { HiMiniArrowDown } from 'react-icons/hi2';
 
 export default function Hero() {
   return (
-    <section id="hero">
-      <div className="hero-text">
-        <div className="hero-title">
+    <section className="hero">
+      <div className="hero__text">
+        <div className="hero__title">
           <h1>Automatize sua casa, simplifique sua vida.</h1>
           <span>A Tech in Lar torna sua casa um lar inteligente.</span>
         </div>
@@ -15,7 +15,7 @@ export default function Hero() {
           <HiMiniArrowDown />
         </button>
       </div>
-      <div className="hero-image">
+      <div className="hero__image">
         <div>
           <Image
             src="/hero.svg"

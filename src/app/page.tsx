@@ -1,5 +1,8 @@
+'use client';
+
 import React from 'react';
 import '../styles/main.scss';
+
 // Components
 import {
   Header,

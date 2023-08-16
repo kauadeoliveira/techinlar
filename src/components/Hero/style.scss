@@ -1,19 +1,22 @@
 @import '../../styles/mixins.scss';
 @import '../../styles/variables.scss';
 
-#hero {
+.hero {
   display: flex;
   flex-direction: column;
   height: 100vh;
+  min-height: 600px;
+  max-height: 930px;
   width: 100%;
   background: #000;
   color: $txt-color-01;
 
-  .hero-text {
+  .hero__text {
     position: relative;
     @include section-padding;
     padding-top: 2.5rem !important;
     flex-grow: 1;
+    min-height: 420px;
     order: 2;
     h1 {
       font-size: 36px;
@@ -40,9 +43,10 @@
     color: #000;
   }
 
-  .hero-image {
+  .hero__image {
     position: relative;
     max-height: 420px;
+    min-height: 220px;
     height: 100%;
     width: 100%;
     order: 1;
@@ -52,7 +56,7 @@
     }
   }
 
-  .hero-image::after {
+  .hero__image::after {
     content: '';
     display: block;
     height: 100%;
@@ -63,7 +67,8 @@
   }
 
   @media (min-width: $tablet) {
-    .hero-title {
+    min-height: 800px;
+    .hero__title {
       span {
         font-size: 1.5rem;
       }
@@ -73,27 +78,28 @@
       }
     }
 
-    .hero-image {
+    .hero__image {
       max-height: 650px;
+      min-height: 400px;
     }
   }
 
-  @media(min-width: $laptop) {
+  @media (min-width: $laptop) {
     flex-direction: row;
 
-    .hero-text {
+    .hero__text {
       order: 1;
       min-width: 60%;
       padding-top: 300px !important;
     }
 
-    .hero-title {
+    .hero__title {
       h1{
         font-size: 3rem;
       }
     }
 
-    .hero-image {
+    .hero__image {
       order: 2;
       min-height: 100%;
     }
@@ -105,27 +111,28 @@
     }
   }
 
-  @media(min-width: $notebook) {
+  @media (min-width: $notebook) {
 
-    .hero-text {
+    .hero__text {
       padding-top: 250px !important;
     }
     
-    .hero-title {
+    .hero__title {
       h1 {
         font-size: 3.5rem;
       }
     }
   }
 
-  @media(min-width: $desktop) {
-    .hero-text {
+  @media (min-width: $desktop) {
+    max-height: 1200px;
+    .hero__text {
       padding-top: 300px !important;
     }
 
-    .hero-title {
+    .hero__title {
       h1 {
-        font-size: 4.5rem;
+        font-size: 4rem;
         margin-bottom: 3rem;
       }
       span {
@@ -134,16 +141,9 @@
     }
   }
 
-  @media(min-width: $desktop-lg) {
-    .hero-text {
+  @media (min-width: $desktop-lg) {
+    .hero__text {
       padding-top: 350px !important;
-    }
-
-    .hero-title {
-      h1 {
-        font-size: 5rem;
-        margin-bottom: 4rem;
-      }
     }
   }
 }
