@@ -8,6 +8,7 @@ const About = forwardRef((ref, props) => {
   return (
     <section className="about">
       <div className="about__text">
+        <SectionTitle title="Sobre nós" />
         <h3>
           Conectamos conforto
           <br />
