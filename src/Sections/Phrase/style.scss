@@ -1,0 +1,89 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
+
+.phrase {
+  @include section-padding;
+  background-color: $bg-color-03;
+
+  & > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: $txt-color-02;
+    min-height: 690px;
+    max-height: 690px;
+    max-width: 900px;
+    margin: 0 auto;
+    
+    blockquote {
+      position: relative;
+      margin: 0 auto;
+      margin-bottom: 2rem;
+      font-size: 1.8rem;
+      font-weight: 300;
+      line-height: 1.6;
+      letter-spacing: 0.5px;
+      z-index: 10;
+  
+      &::after {
+        content: '';
+        background-image: url('/quotes.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 160px;
+        height: 112px;
+        position: absolute;
+        z-index: -10;
+        top: -55px;
+        left: -45px;
+      }
+    }
+  
+  
+    .phrase__author {
+      span:first-child {
+        font-size: 20px;
+      }
+      
+      span {
+        display: block;
+      }
+    }
+  }
+
+
+  @media (min-width: $tablet) {
+    & > div {
+      blockquote {
+        font-size: 2rem;
+  
+        &::after{
+          top: -60px;
+        }
+      }
+  
+      .phrase__author {
+        span:first-child {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+
+  @media (min-width: $notebook) {
+    & > div {
+      color: #A1A1AA;
+      blockquote {
+        font-size: 3rem;
+      }
+
+      blockquote::after{
+        width: 300px;
+        height: 250px;
+        top: -75px;
+        left: -180px;
+      }
+    }
+  }
+}
