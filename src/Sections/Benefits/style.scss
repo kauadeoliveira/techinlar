@@ -100,13 +100,13 @@
 
   @media (min-width: $desktop_lg) {
     .benefits__title{
-      font-size: 11rem;
+      font-size: 9rem;
       margin-bottom: 120px;
     }
 
     .benefits__cards {
-      column-gap: 240px;
-      row-gap: 150px;
+      column-gap: 200px;
+      row-gap: 100px;
 
       .benefits__cards__card {
         span, p {

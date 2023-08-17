@@ -11,7 +11,7 @@
   background: #000;
   color: $txt-color-01;
 
-  .hero__text {
+  .hero__title {
     position: relative;
     @include section-padding;
     padding-top: 2.5rem !important;
@@ -22,25 +22,25 @@
       font-size: 36px;
       margin-bottom: 16px;
     }
-  }
 
-  .circle-btn {
-    background: $bg-color-02;
-    max-height: 50px;
-    max-width: 50px;
-    min-height: 50px;
-    min-width: 50px;
-    border-radius: 100%;
-    font-size: 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    bottom: 20%;
-    left: 50%;
-    transform: translateX(-50%);
-    transition: $hover-transition;
-    color: #000;
+    .hero__title__circle-btn {
+      background: $bg-color-02;
+      max-height: 50px;
+      max-width: 50px;
+      min-height: 50px;
+      min-width: 50px;
+      border-radius: 100%;
+      font-size: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      bottom: 20%;
+      left: 50%;
+      transform: translateX(-50%);
+      transition: $hover-transition;
+      color: #000;
+    }
   }
 
   .hero__image {
@@ -54,21 +54,23 @@
     img {
       object-fit: cover;
     }
+
+    &::after {
+      content: '';
+      display: block;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.25);
+      position: absolute;
+      top: 0;
+    }
   }
 
-  .hero__image::after {
-    content: '';
-    display: block;
-    height: 100%;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.25);
-    position: absolute;
-    top: 0;
-  }
 
   @media (min-width: $tablet) {
     min-height: 800px;
-    .hero__title {
+
+    .hero__title{
       span {
         font-size: 1.5rem;
       }
@@ -87,15 +89,18 @@
   @media (min-width: $laptop) {
     flex-direction: row;
 
-    .hero__text {
+    .hero__title {
       order: 1;
       min-width: 60%;
       padding-top: 300px !important;
-    }
-
-    .hero__title {
       h1{
         font-size: 3rem;
+      }
+
+      .hero__title__circle-btn {
+        transform: none;
+        left: auto;
+        right: 5%;
       }
     }
 
@@ -103,21 +108,12 @@
       order: 2;
       min-height: 100%;
     }
-
-    .circle-btn {
-      transform: none;
-      left: auto;
-      right: 5%;
-    }
   }
 
   @media (min-width: $notebook) {
-
-    .hero__text {
-      padding-top: 250px !important;
-    }
-    
     .hero__title {
+      padding-top: 250px !important;
+
       h1 {
         font-size: 3.5rem;
       }
@@ -126,11 +122,10 @@
 
   @media (min-width: $desktop) {
     max-height: 1200px;
-    .hero__text {
-      padding-top: 300px !important;
-    }
 
     .hero__title {
+      padding-top: 300px !important;
+
       h1 {
         font-size: 4rem;
         margin-bottom: 3rem;
@@ -142,8 +137,16 @@
   }
 
   @media (min-width: $desktop-lg) {
-    .hero__text {
+    .hero__title {
       padding-top: 350px !important;
+
+      h1 {
+        font-size: 5.5rem;
+        margin-bottom: 4rem;
+      }
+      span {
+        font-size: 2rem;
+      }
     }
   }
 }

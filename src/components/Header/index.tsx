@@ -5,16 +5,16 @@ import Image from 'next/image';
 
 export default function Header() {
   return (
-    <header id="header">
-      <div className="logo-container">
+    <header className="header">
+      <div className="logo">
         <Image src="/logo.svg" alt="Logo Tech in Lar" fill />
       </div>
-      <div className="btns-container">
-        <button type="button" className="contact-btn">
+      <div className="btns">
+        <button type="button" className="btns__contact-btn">
           Contato
         </button>
-        <button type="button" className="menu-btn">
-          <div className="menu-btn__icon" />
+        <button type="button" className="btns__menu-btn">
+          <div className="btns__menu-btn__icon" />
         </button>
       </div>
     </header>
